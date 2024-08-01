@@ -1,0 +1,54 @@
+<hr>
+<h4>MVC</h4>
+<p>В срезе визуальных контролов принимается, что:</p>
+<ul>
+<li>моделью является или <a href="https://wasaby.dev/doc/platform/models-collections-types/entity/#wsdataentitymodel">абстрактная модель</a> (для простых контролов), или <a href="https://wasaby.dev/doc/platform/models-collections-types/icollection/">коллекция</a> (для контролов коллекций);</li>
+<li>представлением являются <strong>контролы</strong>;</li>
+<li>контроллерами являются <strong>прикладные модули</strong>.</li>
+</ul>
+<p>Схема работы приложения:</p>
+<ul>
+<li>контроллер манипулирует моделью, внося изменения в ее состояние:
+<ul>
+<li><strong><em>в случае абстрактной модели</em></strong> — меняет значения ее полей</li>
+<li><strong><em>в случае коллекции</em></strong> — добавляет/удаляет/обновляет элементы коллекции;</li>
+</ul>
+</li>
+<li>представление получает от модели уведомления об изменении состояния и актуализирует
+внешний вид согласно изменениям.<br></li>
+</ul>
+<p><img src="./information.png" alt="Img"><strong>Примечание</strong>. В настоящее время они умеют работать только с одним видом коллекций - <a href="https://wasaby.dev/doc/platform/models-collections-types/icollection/#wsdatacollectionrecordset">списком записей</a></p>
+<p><span style="font-size:0.9em;"><strong>Диаграмма компонентов для контрола коллекции</strong></span><br>
+<img src="./diagram.jpg" alt="Img"><br>
+На данной диаграмме представлены:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Название опции</strong></th>
+<th><strong>Описание</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_<strong>items</strong></td>
+<td>Коллекция, отображаемая контролом;</td>
+</tr>
+<tr>
+<td><strong><em>dataSource</em></strong></td>
+<td>Источник данных.</td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-size:0.9em;"><strong>Пример</strong></span><br>
+Определим модель пользователя:<br></p>
+<pre><code class="language-java">export <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Model</span> </span>{
+<span class="hljs-number">_</span>$format: [
+...
+],
+<span class="hljs-number">_</span>$idProperty: <span class="hljs-string">'login'</span>,
+authenticate(password) {
+...
+}
+}
+</code></pre>
+<hr>
