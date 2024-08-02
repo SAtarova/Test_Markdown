@@ -13,7 +13,11 @@
 * представление получает от модели уведомления об изменении состояния и актуализирует
 внешний вид согласно изменениям.<br>
 
-![Img](./information.png)**Примечание**. В настоящее время они умеют работать только с одним видом коллекций - [списком записей](https://wasaby.dev/doc/platform/models-collections-types/icollection/#wsdatacollectionrecordset)  
+<div style="border-color:grey; background:ligthgrey; border-radius:4px">
+
+>![Img](./information.png)  **Примечание**. В настоящее время они умеют работать только с одним видом коллекций - [списком записей](https://wasaby.dev/doc/platform/models-collections-types/icollection/#wsdatacollectionrecordset)  
+
+</div>
 
 <span style="font-size:0.9em;">**Диаграмма компонентов для контрола коллекции**</span><br>
 ![Img](./diagram.jpg)<br>
